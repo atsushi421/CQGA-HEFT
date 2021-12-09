@@ -78,7 +78,7 @@ class Q_learning:
             # エピソードループ終了判定
             if(no_update_flag == (self.dag.num_of_node - 1)):  # 1エピソード内でq_saの更新が無かった場合
                 convergence_flag+=1
-                if(convergence_flag == 300000):  # 100では300000ぐらい必要
+                if(convergence_flag == 200000):  # 100では300000ぐらい必要
                     break
                 
     
