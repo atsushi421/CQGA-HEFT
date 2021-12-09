@@ -31,7 +31,7 @@ class Evaluater:
         f.write("経過時間" + "\t" + "世代" + "\t" + "メイクスパン" + "\t" + "遺伝子情報と実際の割り当ての一致度" + "\n")
         f.close()
         
-        GeneticAlgorithm(self.DAG, self.TARGET, 8, 0.01, 120, self.RESULT_PATH)
+        GeneticAlgorithm(self.DAG, self.TARGET, 8, 0.01, 50, self.RESULT_PATH)
             
     
     # FACTORに基づいてDAGを更新
