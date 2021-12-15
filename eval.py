@@ -31,7 +31,7 @@ class Evaluater:
         f.write("経過時間" + "\t" + "世代" + "\t" + "メイクスパン" + "\t" + "遺伝子情報と実際の割り当ての一致度" + "\n")
         f.close()
         
-        GeneticAlgorithm(self.DAG, self.TARGET, 8, 0.01, 50, self.RESULT_PATH)
+        GeneticAlgorithm(self.DAG, self.TARGET, 8, 0.01, 30, self.RESULT_PATH)
             
     
     # FACTORに基づいてDAGを更新
@@ -76,10 +76,10 @@ class Evaluater:
                 return "./result/change_NumNode/NumNode_20" + "/" + self.DAG.file_name + ".txt"
             if('50_' in self.DAG.file_name):
                 return "./result/change_NumNode/NumNode_50" + "/" + self.DAG.file_name + ".txt"
+            if('70_' in self.DAG.file_name):
+                return "./result/change_NumNode/NumNode_70" + "/" + self.DAG.file_name + ".txt"
             if('100_' in self.DAG.file_name):
                 return "./result/change_NumNode/NumNode_100" + "/" + self.DAG.file_name + ".txt"
-            if('200_' in self.DAG.file_name):
-                return "./result/change_NumNode/NumNode_200" + "/" + self.DAG.file_name + ".txt"
 
 
 

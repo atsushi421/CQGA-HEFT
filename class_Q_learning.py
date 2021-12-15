@@ -72,13 +72,13 @@ class Q_learning:
                 before_q_sa = self.q_sa[before_state][selected_node]  # 更新前の値を保持
                 self.q_sa[before_state][selected_node] = self.q_sa[before_state][selected_node] + self.alpha * (r + self.gamma * self.q_sa[current_state][max_value_action] - self.q_sa[before_state][selected_node])
 
-                if(abs(self.q_sa[before_state][selected_node] - before_q_sa) <= 0.00000001):
+                if(abs(self.q_sa[before_state][selected_node] - before_q_sa) <= 1):  # 更新量が 1 より小さい場合
                     no_update_flag+=1
             
             # エピソードループ終了判定
             if(no_update_flag == (self.dag.num_of_node - 1)):  # 1エピソード内でq_saの更新が無かった場合
                 convergence_flag+=1
-                if(convergence_flag == 10000):  # 100では300000ぐらい必要. 50 は 30000
+                if(convergence_flag == 80000):  # 100では300000ぐらい必要. 70 は 200000. 50 は 70000
                     break
                 
     

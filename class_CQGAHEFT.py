@@ -121,6 +121,10 @@ class GeneticAlgorithm():
             f = open(self.RESULT_PATH, "a")
             f.write(str(elapsed_time) + "\t" + str(i) + "\t"+ str(best_chromosome.fitness) + "\t" + str(best_chromosome.match_ratio) + "\n")
             f.close()
+            
+            # タイムアウト判定
+            if(elapsed_time > 28800):  # 8 時間を超えたら
+                break
     
     
     # 現在の世代の遺伝子をすべて評価

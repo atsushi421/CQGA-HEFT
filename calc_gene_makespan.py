@@ -20,7 +20,7 @@ def calc_gene_makespan(dag, comm_correspondence, gene_list, inout_ratio):
     one_entry_dag.ranku = [0] * one_entry_dag.num_of_node  # 初期化
     one_entry_dag.ranku_calc(one_entry_dag.ve_index)
     
-    q_learning = Q_learning(1.0, 0.8, one_entry_dag)
+    q_learning = Q_learning(1.0, 0.2, one_entry_dag)
     q_learning.learning()
     
     scheduling_list = []
